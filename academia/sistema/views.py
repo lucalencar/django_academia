@@ -9,11 +9,6 @@ from .models import Treino
 from .models import Turma
 # Create your views here.
 
-'''
-def form_cadastro(request):
-    return render(request, 'cadastro.html')
-'''
-
 
 def cadastro_aluno(request):
 
@@ -61,7 +56,7 @@ def cadastro_instrutor(request):
     #return HttpResponseRedirect('/clientes/inicio')
     return HttpResponse(json.dumps(response))       
 
-
+''
 def cadastro_treino(request):
 
     if request.method == 'POST':

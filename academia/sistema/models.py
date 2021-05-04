@@ -32,18 +32,6 @@ class Aluno(models.Model):
         blank = False
     )
 
-    genero_choices = (
-        ("F", "Feminino"),
-        ("M", "Masculino"),
-        ("O", "Outro")
-    )
-
-    genero = models.CharField(
-        max_length = 1,
-        choices = genero_choices,
-        null = False,
-        blank = False
-    )
 
     endereco = models.CharField(
         max_length = 200,
@@ -107,6 +95,8 @@ class Aluno(models.Model):
     )
 
     objects = models.Manager()
+
+
 
 class Instrutor(models.Model):
 
