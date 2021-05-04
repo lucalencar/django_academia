@@ -9,6 +9,50 @@ from .models import Treino
 from .models import Turma
 # Create your views here.
 
+def inicio(request):
+
+    alunos = Aluno.objects.all()
+    instrutor = Instrutor.objects.all()
+
+    contexto = {
+        'alunos': alunos,
+        'instrutor': instrutor
+    }
+
+    return render(request, 'inicio.html', contexto)
+
+
+def form_cadastro_aluno(request):
+    return render(request, 'cadastro_aluno.html')
+
+def form_cadastro_instrutor(request):
+    return render(request, 'cadastro_instrutor.html')
+
+def form_cadastro_turma(request):
+    return render(request, 'cadastro_turma.html')
+
+def form_cadastro_treino(request):
+    return render(request, 'cadastro_treino.html')
+
+def visualizar_aluno(request, user_id):
+
+    if request.method == 'GET':
+        alunos = Aluno.objects.filter(id=user_id)
+
+        contexto = {
+            'alunos': alunos
+        }
+    return render(request, 'visualizar_aluno.html', contexto)
+
+def visualizar_instrutor(request, user_id):
+
+    if request.method == 'GET':
+        instrutor = Instrutor.objects.filter(id=user_id)
+
+        contexto = {
+            'instrutor': instrutor
+        }
+    return render(request, 'visualizar_instrutor.html', contexto)
 
 def cadastro_aluno(request):
 
@@ -28,6 +72,7 @@ def cadastro_aluno(request):
         aluno.peso = request.POST.get('peso')
         aluno.altura = request.POST.get('altura')
         aluno.data_matricula = request.POST.get('data_matricula')
+        aluno.telefone = request.POST.get('telefone')
         aluno.save()
  
         response = {

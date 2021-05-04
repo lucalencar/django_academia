@@ -11,10 +11,24 @@
     {% for alunos in alunos  %}
 
     <h3>Nome: {{ alunos.nome }} </h3>
-    <h3>Sobrenome: {{ clientes.sobrenome }} </h3>
+    <h3>Sobrenome: {{ alunos.sobrenome }} </h3>
+    <a href="visualizar_aluno/{{alunos.id}}">Visualizar</a> / 
     <hr>
 
     {% endfor %}
+
+    <h1> Instrutores </h1>
+
+    {% for instrutor in instrutor  %}
+
+    <h3>Nome: {{ instrutor.nome }} </h3>
+    <h3>Sobrenome: {{ instrutor.sobrenome }} </h3>
+    <a href="visualizar_instrutor/{{instrutor.id}}">Visualizar</a> / 
+    <hr>
+
+    {% endfor %}
+
+
 
 </body>
 </html> 

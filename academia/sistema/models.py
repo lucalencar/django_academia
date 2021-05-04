@@ -16,8 +16,8 @@ class Aluno(models.Model):
     )
 
     data_nascimento = models.DateField(
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
     
     telefone = models.CharField(
@@ -77,8 +77,8 @@ class Aluno(models.Model):
     )
 
     data_matricula = models.DateField(
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
 
     genero_choices = (
@@ -90,8 +90,8 @@ class Aluno(models.Model):
     genero = models.CharField(
         max_length = 1,
         choices = genero_choices,
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
 
     objects = models.Manager()
@@ -117,11 +117,6 @@ class Instrutor(models.Model):
         blank = False
     )
 
-    data_nascimento = models.DateField(
-        null = False,
-        blank = False
-    )
-    
     telefone = models.CharField(
         max_length = 14,
         null = False,
@@ -143,8 +138,8 @@ class Instrutor(models.Model):
     genero = models.CharField(
         max_length = 1,
         choices = genero_choices,
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
 
     objects = models.Manager()
@@ -155,18 +150,18 @@ class Treino(models.Model):
     hora_inicio_treino = models.TimeField(
         auto_now = False,
         auto_now_add = False,
-        null = False
+        null = True
     )
 
     hora_fim_treino = models.TimeField(
         auto_now = False,
         auto_now_add = False,
-        null = False
+        null = True
     )
 
     data_treino = models.DateField(
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
 
     rotina = models.CharField(
@@ -205,18 +200,18 @@ class Turma(models.Model):
     hora_inicio_turma = models.TimeField(
         auto_now = False,
         auto_now_add = False,
-        null = False
+        null = True
     )
 
     hora_fim_turma = models.TimeField(
         auto_now = False,
         auto_now_add = False,
-        null = False
+        null = True
     )
 
     data_turma = models.DateField(
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
 
     instrutor = models.OneToOneField(
