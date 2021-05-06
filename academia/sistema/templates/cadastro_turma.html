@@ -1,0 +1,46 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Turma</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+</head>
+<body>
+
+
+{% csrf_token %}
+<form action="hora_inicio" method="POST"> 
+    {% csrf_token %}
+   <label for="atividade">Atividade:</label>
+    <br></br>
+    <input id="atividade" name="atividade" type="text"/>
+    <br></br>
+    <label for="hora_inicio_turma">Início:</label>
+    <br></br>
+    <input id="hora_inicio_turma" name="hora_inicio_turma" type="time"/>
+    <br></br>
+    <label for="hora_fim_turma">Fim :</label>
+    <br></br>
+    <input id="hora_fim_turma" name="hora_fim_turma" type="time"/>
+    <br></br>
+    <label for="data_turma">data_treino:</label>
+    <br></br>
+    <input id="data_turma" name="data_turma" type="date"/>
+    <br></br>
+    <label for="instrutor">Instrutor:</label>
+    <br></br>
+    <input id="instrutor" name="instrutor" type="text"/>
+    <br></br>
+    <label for="alunos">Alunos:</label>
+    <br></br>
+    <input id="alunos" name="alunos" type="text"/>
+    <br></br>
+    <br></br>
+    <input type="submit" value="Enviar">
+</form>
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+</body>
+</html> 

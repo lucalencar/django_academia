@@ -1,0 +1,33 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizar usuários</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+h1 {
+  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1> Visualizar Instrutor </h1>
+
+{% for instrutor in instrutor %}
+
+<h3> Nome: {{instrutor.nome}} </h3>
+<h3> Sobrenome: {{instrutor.sobrenome}} </h3>
+<h3> CPF: {{instrutor.cpf}} </h3>
+<h3> Telefone: {{instrutor.telefone}} </h3>
+<hr>
+
+
+{% endfor %}
+
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+
+</body>
+</html> 

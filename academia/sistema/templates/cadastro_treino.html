@@ -1,0 +1,45 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Treino</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+</head>
+<body>
+
+
+<form action="hora_inicio_treino" method="POST"> 
+    {% csrf_token %}
+    <label for="hora_inicio_treino">Início:</label>
+    <br></br>
+    <input id="hora_inicio_treino" name="hora_inicio_treino" type="time"/>
+    <br></br>
+    <label for="hora_fim_treino">Fim :</label>
+    <br></br>
+    <input id="hora_fim_treino" name="hora_fim_treino" type="time"/>
+    <br></br>
+    <label for="data_treino">data_treino:</label>
+    <br></br>
+    <input id="data_treino" name="data_treino" type="date"/>
+    <br></br>
+    <label for="rotina">Rotina:</label>
+    <br></br>
+    <input id="rotina" name="rotina" type="text"/>
+    <br></br>
+    <label for="cod_instrutor">Instrutor:</label>
+    <br></br>
+    <input id="cod_instrutor" name="cod_instrutor" type="text"/>
+    <br></br>
+    <label for="cod_aluno">Aluno:</label>
+    <br></br>
+    <input id="cod_aluno" name="cod_aluno" type="text"/>
+    <br></br>
+    <br></br>
+    <input type="submit" value="Enviar">
+</form>
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+</body>
+</html> 
