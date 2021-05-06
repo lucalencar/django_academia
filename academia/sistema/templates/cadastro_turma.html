@@ -162,27 +162,14 @@ input[type=submit]:hover {
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="cod_instrutor">Instrutor</label>
+        <label for="turma.instrutor_id">Instrutor</label>
       </div>
       <div class="col-75">
-        <input type="text" id="instrutor" name="instrutor" placeholder="Digite o nome do instrutor..">
+        <input type="text" id="turma.instrutor_id" name="turma.instrutor_id" placeholder="Digite o nome do instrutor..">
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="cod_aluno">Aluno</label>
-      </div>
-      <div class="col-75">
-        <select>
-            {% for alunos in alunos %}
-        <option value="{{ alunos.id }}">
-            {{ alunos.nome }}
-        </option>
-            {% endfor %}
-        </select>
-      </div>
-    </div>
-    <br/>
+ 
+   <br/>
     <div class="row">
       <input type="submit" value="Submit">
     </div>

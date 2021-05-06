@@ -26,9 +26,9 @@ urlpatterns = [
     path('atualizar_dados_instrutor/<int:user_id>', views.atualizar_dados_instrutor, name='atualizar_dados_instrutor'),
     path('atualizar_dados_treino/<int:user_id>', views.atualizar_dados_treino, name='atualizar_dados_treino'),
     path('deletar_aluno/<int:user_id>', views.deletar_aluno, name="deletar_aluno"),
-    path('deletar_instrutor/<int:user_id', views.deletar_instrutor, name="deletar_instrutor"),
-    path('deletar_treino/<int:user_id', views.deletar_instrutor, name="deletar_treino"),
-    path('deletar_turma/<int:user_id', views.deletar_instrutor, name="deletar_turma")
+    path('deletar_instrutor/<int:user_id>', views.deletar_instrutor, name="deletar_instrutor"),
+    path('deletar_treino/<int:user_id>', views.deletar_instrutor, name="deletar_treino"),
+    path('deletar_turma/<int:user_id>', views.deletar_instrutor, name="deletar_turma")
 
 
 ]

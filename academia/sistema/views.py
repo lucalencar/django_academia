@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import json
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.status import HTTP_200_OK
-from .models import Aluno, Instrutor, Treino, Turma, Aluno_Turma
+from .models import Aluno, Instrutor, Treino, Turma
 # Create your views here.
 
 def inicio(request):
@@ -305,18 +305,4 @@ def cadastro_turma(request):
             'response': HTTP_200_OK
         }
 
-    return HttpResponse(json.dumps(response))
-
-def aluno_turma(request):
-
-    if request.method == 'POST':
-
-        aluno_turma = Aluno_Turma()
-        aluno_turma.cod_aluno = request.POST.get('cod_aluno')
-        aluno_turma.cod_turma = request.POST.get('cod_turma')
-    
-        response = {
-            'response': HTTP_200_OK
-        }
-    
     return HttpResponse(json.dumps(response))

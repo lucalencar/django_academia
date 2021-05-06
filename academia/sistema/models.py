@@ -220,18 +220,10 @@ class Turma(models.Model):
         related_name = '+'
     )
 
-    objects = models.Manager()
-
-class Aluno_Turma(models.Model):
-
-    cod_turma = models.ForeignKey(
-        'Turma',
-        on_delete = models.CASCADE,
-        related_name = '+'
+    alunos = models.ManyToManyField(
+        'Aluno'
     )
 
-    cod_aluno = models.ForeignKey(
-        'Aluno',
-        on_delete = models.CASCADE,
-        related_name = '+'
-    )    
+    objects = models.Manager()
+
+    
