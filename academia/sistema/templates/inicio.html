@@ -4,30 +4,223 @@
 <head>
 <title>Início</title>
 <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+
+input[type=submit] {
+  background-color: #cecece;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+.topnav {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.topnav a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #bb5d5d;
+  color: white;
+}
+
+</style>
 </head>
 <body>
-    
 
+<div class="topnav">
+  <a class="active" href="#home">Academia Django</a>
+  <a href="http://{{request.get_host}}/admin">Admin</a>
+  <a href="#contact">Mensagens</a>
+  <a href="#about">Suporte</a>
+</div>
+<br/><br/>
+
+    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Alunos </a>
+
+<br/><br/><br/>
+
+<table>
+<thread>
+
+    <tr>
+        <th style="width: 50%">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Atualizar</th>
+        <th scope="col">Deletar</th>
+    </tr>
+</thread>
     {% for alunos in alunos  %}
 
-    <h3>Nome: {{ alunos.nome }} </h3>
-    <h3>Sobrenome: {{ alunos.sobrenome }} </h3>
-    <a href="visualizar_aluno/{{alunos.id}}">Visualizar</a> / 
-    <hr>
+    <tr>
+        <td>{{ alunos.nome }}</td>
+        <td>{{ alunos.sobrenome }}</td>
+        <td>{{ alunos.cpf }}</td>
+        <td><a href="visualizar_aluno/{{alunos.id}}">View</td>
+        <td> <a href="atualizar_dados_aluno/{{alunos.id}}">Update</td>
+        <td><a href="deletar_aluno/{{alunos.id}}">Del</td>
 
+    </tr>
+</thread>
     {% endfor %}
 
-    <h1> Instrutores </h1>
+</table>
 
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/form_cadastro_aluno">
+    <input type="submit" value="Cadastrar Aluno">
+    </form>
+    <br/><br/><br/><br/>
+
+
+
+    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Instrutores </a>
+<br/><br/><br/>
+
+
+<table>
+<thread>
+    <tr>
+        <th style="width: 50%">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Atualizar</th>
+        <th scope="col">Deletar</th>
+
+
+    </tr>
+</thread>
     {% for instrutor in instrutor  %}
+<tbody>
+    <tr>
+        <td>{{ instrutor.nome }}</td>
+        <td>{{ instrutor.sobrenome }}</td>
+        <td>{{ instrutor.cpf }}</td>
+        <td><a href="visualizar_instrutor/{{instrutor.id}}">View</td>
+        <td> <a href="atualizar_dados_instrutor/{{instrutor.id}}">Update</td>
+        <td><a href="deletar_instrutor/{{instrutor.id}}">Del</td>
 
-    <h3>Nome: {{ instrutor.nome }} </h3>
-    <h3>Sobrenome: {{ instrutor.sobrenome }} </h3>
-    <a href="visualizar_instrutor/{{instrutor.id}}">Visualizar</a> / 
-    <hr>
-
+    </tr>
+</thread>
     {% endfor %}
 
+</table>
+
+ 
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/form_cadastro_instrutor">
+    <input type="submit" value="Cadastrar Instrutor">
+    </form>
+    <br/><br/><br/><br/>
+
+
+    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Treinos </a>
+<br/><br/><br/>
+
+<table>
+<thread>
+    <tr>
+        <th style="width: 50%">Início</th>
+        <th scope="col">Fim</th>
+        <th scope="col">Rotina</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Atualizar</th>
+        <th scope="col">Deletar</th>
+
+
+    </tr>
+</thread>
+
+    {% for treinos in treinos  %}
+
+
+
+<tbody>
+    <tr>
+        <td>{{ treinos.hora_inicio_treino }}</td>
+        <td>{{ treinos.hora_fim_treino }}</td>
+        <td>{{ treinos.rotina }}</td>
+        <td><a href="visualizar_treino/{{treinos.id}}">View</td>
+        <td> <a href="atualizar_dados_treino/{{treinos.id}}">Update</td>
+        <td><a href="deletar_treino/{{treinos.id}}">Del</td>
+
+    </tr>
+</thread>
+    {% endfor %}
+
+</table>
+
+ 
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/form_cadastro_treino">
+    <input type="submit" value="Cadastrar Treino">
+    </form>
+    <br/><br/><br/><br/>
+
+
+
+    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Turmas </a>
+<br/><br/><br/>
+
+<table>
+<thread>
+    <tr>
+        <th style="width: 50%">Início</th>
+        <th scope="col">Fim</th>
+        <th scope="col">Atividade</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Atualizar</th>
+        <th scope="col">Deletar</th>
+
+
+    </tr>
+</thread>
+
+    {% for turmas in turmas  %}
+
+<tbody>
+    <tr>
+        <td>{{ turmas.hora_inicio_turma }}</td>
+        <td>{{ turmas.hora_fim_turma }}</td>
+        <td>{{ turmas.atividade }}</td>
+        <td><a href="visualizar_turma/{{turmas.id}}">View</td>
+        <td> <a href="atualizar_dados_turma/{{turmas.id}}">Update</td>
+        <td><a href="deletar_turma/{{turmas.id}}">Del</td>
+
+    </tr>
+</thread>
+    {% endfor %}
+</table>
+
+     <br/>
+
+    <form action="http://{{request.get_host}}/sistema/form_cadastro_turma">
+    <input type="submit" value="Cadastrar Turma">
+    </form>
+    <br/>
 
 
 </body>

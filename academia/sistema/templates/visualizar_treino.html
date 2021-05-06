@@ -1,0 +1,32 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizar Treino</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+h1 {
+  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1> Visualizar Treino </h1>
+{% for treinos in treinos %}
+
+<h3> Data do Treino: {{treinos.data_treino}} </h3>
+<h3> Rotinas: {{treinos.rotina}} </h3>
+<h3> Hora início: {{treinos.hora_inicio_treino}} </h3>
+<h3> Hora Fim: {{treinos.hora_fim_treino}} </h3>
+
+<hr>
+
+{% endfor %}
+
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+
+</body>
+</html> 

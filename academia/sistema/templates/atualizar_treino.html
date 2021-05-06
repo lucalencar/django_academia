@@ -1,0 +1,55 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar Treino</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+h1 {
+  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1> Atualização do Treino </h1>
+
+{% for treinos in treinos %}
+
+<form action="http://{{request.get_host}}/sistema/atualizar_treino" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name='user_id' value="{{treinos.id}}">
+  <label>Início: </label>
+  <input type="text" name="hora_inicio_treino" value="{{treinos.hora_inicio_treino}}"/>
+  <br></br>
+  <label>Fim: </label>
+  <input type="text" name="hora_fim_treino" value="{{treinos.hora_fim_treino}}"/>
+  <br></br>
+  <label>Data: </label>
+  <input type="text" name="data_treino" value="{{treinos.data_treino}}"/>
+  <br></br>
+  <label>Rotina: </label>
+  <input type="text" name="rotina" value="{{treinos.rotina}}"/>
+  <br></br>
+  <label>Instrutor: </label>
+  <input type="text" name="cod_instrutor" value="{{treinos.cod_instrutor}}"/>
+  <br></br>
+    <label>Aluno: </label>
+  <input type="text" name="cod_aluno" value="{{treinos.cod_aluno}}"/>
+  <br></br>
+
+
+  <input type="submit" value="Enviar">
+
+</form>
+    <br/>
+
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+  <hr>
+
+{% endfor %}
+
+</body>
+</html> 

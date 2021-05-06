@@ -3,20 +3,22 @@ from django.http import HttpResponse, HttpResponseRedirect
 import json
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.status import HTTP_200_OK
-from .models import Aluno
-from .models import Instrutor
-from .models import Treino
-from .models import Turma
+from .models import Aluno, Instrutor, Treino, Turma, Aluno_Turma
 # Create your views here.
 
 def inicio(request):
 
     alunos = Aluno.objects.all()
     instrutor = Instrutor.objects.all()
+    treinos = Treino.objects.all()
+    turmas = Turma.objects.all()
+
 
     contexto = {
         'alunos': alunos,
-        'instrutor': instrutor
+        'instrutor': instrutor,
+        'treinos': treinos,
+        'turmas': turmas
     }
 
     return render(request, 'inicio.html', contexto)
@@ -32,6 +34,7 @@ def form_cadastro_turma(request):
     return render(request, 'cadastro_turma.html')
 
 def form_cadastro_treino(request):
+
     return render(request, 'cadastro_treino.html')
 
 def visualizar_aluno(request, user_id):
@@ -54,6 +57,156 @@ def visualizar_instrutor(request, user_id):
         }
     return render(request, 'visualizar_instrutor.html', contexto)
 
+def visualizar_treino(request, user_id):
+
+    if request.method == 'GET':
+        treinos = Treino.objects.filter(id=user_id)
+
+        contexto = {
+            'treinos': treinos
+        }
+    return render(request, 'visualizar_treino.html', contexto)
+
+def visualizar_turma(request, user_id):
+
+    if request.method == 'GET':
+        turmas = Turma.objects.filter(id=user_id)
+
+        contexto = {
+            'turmas': turmas
+        }
+    return render(request, 'visualizar_turma.html', contexto)
+
+
+def atualizar_dados_aluno(request, user_id):
+
+    if request.method == 'GET':
+        alunos = Aluno.objects.filter(id=user_id)
+        
+        contexto = {
+            'alunos': alunos
+        }
+
+        return render(request, "atualizar_aluno.html", contexto)
+        #clientes.update(nome=nome, sobrenome=sobrenome, cpf=cpf, telefone=telefone)
+
+def atualizar_dados_treino(request, user_id):
+    treinos = Treino.objects.filter(id=user_id)
+
+    contexto = {
+        'treinos': treinos
+    }
+
+    return render(request, "atualizar_treino.html", contexto)
+
+def atualizar_dados_turma(request, user_id):
+    turmas = Turma.objects.filter(id=user_id)
+
+    contexto = {
+        'turmas': turmas
+    }
+    return render(request, "atualizar_turma.html", contexto)
+    
+
+def atualizar_alunos(request):
+    if request.method == 'POST':
+        
+        nome = request.POST.get('nome')
+        sobrenome = request.POST.get('sobrenome')
+        cpf = request.POST.get('cpf')
+        telefone = request.POST.get('telefone')
+        peso = request.POST.get('peso')
+        altura = request.POST.get('altura')
+        endereco = request.POST.get('endereco')
+        cep =request.POST.get('cep')
+        bairro = request.POST.get('bairro')
+        data_matricula = request.POST.get('data_matricula')
+        estado = request.POST.get('estado')
+        genero = request.POST.get('genero')
+        data_nascimento = request.POST.get('data_nascimento')
+        user_id = request.POST.get('user_id')
+
+        alunos = Aluno.objects.filter(id=user_id)
+        alunos.update(nome=nome, sobrenome=sobrenome, cpf=cpf, telefone=telefone, peso=peso, altura=altura, genero=genero, bairro=bairro, data_matricula=data_matricula, data_nascimento=data_nascimento, estado=estado, endereco=endereco, cep=cep)
+
+        return HttpResponseRedirect('/sistema/inicio')
+
+def atualizar_dados_instrutor(request, user_id):
+
+    if request.method == 'GET':
+
+        instrutor = Instrutor.objects.filter(id=user_id)
+
+        contexto = {
+            'instrutor': instrutor
+        }
+
+        return render(request, 'atualizar_instrutor.html', contexto)
+
+def atualizar_instrutor(request):
+    if request.method == 'POST':
+        
+        nome = request.POST.get('nome')
+        sobrenome = request.POST.get('sobrenome')
+        cpf = request.POST.get('cpf')
+        telefone = request.POST.get('telefone')
+        titulacao = request.POST.get('titulacao')
+        genero = request.POST.get('genero')
+        user_id = request.POST.get('user_id')
+
+        instrutor = Instrutor.objects.filter(id=user_id)
+        instrutor.update(titulacao=titulacao, nome=nome, sobrenome=sobrenome, cpf=cpf, telefone=telefone, genero=genero)
+
+        return HttpResponseRedirect('/sistema/inicio')
+
+def atualizar_treino(request):
+    if request.method == 'POST':
+
+        rotina = request.POST.get('rotina')
+        hora_inicio_treino = request.POST.get('hora_inicio_treino')
+        hora_fim_treino = request.POST.get('hora_fim_treino')
+        data_treino = request.POST.get('data_treino')
+        cod_instrutor = request.POST.get('cod_instrutor')
+        cod_aluno = request.POST.get('cod_aluno')
+        user_id = request.POST.get('user_id')
+
+        treino = Treino.objects.filter(id=user_id)
+        treino.update(rotina=rotina, hora_fim_treino=hora_fim_treino, hora_inicio_treino=hora_inicio_treino, data_treino=data_treino, cod_instrutor=cod_instrutor, cod_aluno=cod_aluno)
+
+        return HttpResponseRedirect('/sistema/inicio')
+
+def deletar_aluno(request, user_id):
+
+    if request.method == 'GET':
+        alunos = Aluno.objects.filter(id=user_id)
+        alunos.delete()
+
+    return HttpResponseRedirect('/sistema/inicio')
+
+def deletar_instrutor(request, user_id):
+
+    if request.method == 'GET':
+        instrutor = Instrutor.objects.filter(id=user_id)
+        instrutor.delete()
+    
+    return HttpResponseRedirect('/sistema/inicio')
+
+def deletar_treino(request, user_id):
+
+    if request.method == 'GET':
+        treinos = Treino.objects.filter(id=user_id)
+        treinos.delete()
+    
+    return HttpResponseRedirect('/sistema/inicio')
+
+def deletar_turma(request, user_id):
+
+    if request.method == 'GET':
+        turmas = Turma.objects.filter(id=user_id)
+        turmas.delete()
+    
+    return HttpResponseRedirect('/sistema/inicio')
+
 def cadastro_aluno(request):
 
     if request.method == 'POST':
@@ -75,11 +228,11 @@ def cadastro_aluno(request):
         aluno.telefone = request.POST.get('telefone')
         aluno.save()
  
-        response = {
-            'response': HTTP_200_OK
-        }
+     #   response = {
+     #       'response': HTTP_200_OK
+     #   }
 
-    return HttpResponse(json.dumps(response))   
+    return HttpResponseRedirect('/sistema/inicio')  
 
 def cadastro_instrutor(request):
 
@@ -94,23 +247,23 @@ def cadastro_instrutor(request):
         instrutor.titulacao = request.POST.get('titulacao')
         instrutor.save()
 
-        response = {
-            'response': HTTP_200_OK
-        }
+    #    response = {
+    #        'response': HTTP_200_OK
+    #    }
 
-    #return HttpResponseRedirect('/clientes/inicio')
-    return HttpResponse(json.dumps(response))       
+    return HttpResponseRedirect('/sistema/inicio')
+    #return HttpResponse(json.dumps(response))       
 
 ''
 def cadastro_treino(request):
+    
 
     if request.method == 'POST':
-
         treino = Treino()
         treino.rotina = request.POST.get('rotina')
-        treino.hora_inicio = request.POST.get('hora_inicio')
-        treino.hora_fim = request.POST.get('hora_fim')
-        treino.data_treino = request.POST.get('data_treino')
+        treino.hora_inicio_treino = request.POST.get('hora_inicio_treino')
+        treino.hora_fim_treino = request.POST.get('hora_fim_treino')
+        treino.data_treino = request.POST.get('data_treino')   
         treino.cod_aluno = request.POST.get('cod_aluno')
         treino.cod_instrutor = request.POST.get('cod_instrutor')
         treino.save()
@@ -137,4 +290,18 @@ def cadastro_turma(request):
             'response': HTTP_200_OK
         }
 
+    return HttpResponse(json.dumps(response))
+
+def aluno_turma(request):
+
+    if request.method == 'POST':
+
+        aluno_turma = Aluno_Turma()
+        aluno_turma.cod_aluno = request.POST.get('cod_aluno')
+        aluno_turma.cod_turma = request.POST.get('cod_turma')
+    
+        response = {
+            'response': HTTP_200_OK
+        }
+    
     return HttpResponse(json.dumps(response))

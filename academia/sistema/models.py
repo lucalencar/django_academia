@@ -173,13 +173,18 @@ class Treino(models.Model):
     cod_instrutor = models.OneToOneField(
         'Instrutor',
         on_delete = models.CASCADE,
-        related_name = '+'
+        related_name = '+',
+        null = True,
+        blank = True
+
     )
 
     cod_aluno = models.OneToOneField(
         'Aluno',
         on_delete = models.CASCADE,
-        related_name = '+'
+        related_name = '+',
+        null = True,
+        blank = True
     )
 
     objects = models.Manager()    
@@ -190,11 +195,6 @@ class Turma(models.Model):
         max_length = 300,
         null = False,
         blank = False
-    )
-
-    alunos = models.ManyToManyField(
-        'Aluno',
-        related_name = '+'
     )
 
     hora_inicio_turma = models.TimeField(
@@ -221,3 +221,17 @@ class Turma(models.Model):
     )
 
     objects = models.Manager()
+
+class Aluno_Turma(models.Model):
+
+    cod_turma = models.ForeignKey(
+        'Turma',
+        on_delete = models.CASCADE,
+        related_name = '+'
+    )
+
+    cod_aluno = models.ForeignKey(
+        'Aluno',
+        on_delete = models.CASCADE,
+        related_name = '+'
+    )    

@@ -1,1 +1,21 @@
-body{background: #d4d4d4}
+body{background: #79aec8}
+
+table {
+    border: 0px solid #606060; background-color: #000;
+    width: 50%;
+    table-layout: fixed;
+}
+
+thead
+{
+    display: table-row;
+}
+
+th {
+    width: 50%;border: 0px solid #606060; color: white; background-color: #666666;text-align: center; border-collapse: collapse;
+}
+
+td {
+    background-color: #f0f0f0; color: #000;
+}
+

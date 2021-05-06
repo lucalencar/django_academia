@@ -1,0 +1,53 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar Aluno</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+h1 {
+  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1> Atualização de Aluno </h1>
+
+{% for instrutor in instrutor %}
+
+<form action="http://{{request.get_host}}/sistema/atualizar_instrutor" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name='user_id' value="{{instrutor.id}}">
+  <label>Nome: </label>
+  <input type="text" name="nome" value="{{instrutor.nome}}"/>
+  <br></br>
+  <label>Sobrenome: </label>
+  <input type="text" name="sobrenome" value="{{instrutor.sobrenome}}"/>
+  <br></br>
+  <label>Titulação: </label>
+  <input type="text" name="titulacao" value="{{instrutor.titulacao}}"/>
+  <br></br>
+  <label>CPF: </label>
+  <input type="text" name="cpf" value="{{instrutor.cpf}}"/>
+  <br></br>
+  <label>Telefone: </label>
+  <input type="text" name="telefone" value="{{instrutor.telefone}}"/>
+  <br></br>
+  
+
+
+  <input type="submit" value="Enviar">
+
+</form>
+    <br/>
+
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+  <hr>
+
+{% endfor %}
+
+</body>
+</html> 

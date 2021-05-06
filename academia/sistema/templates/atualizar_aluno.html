@@ -1,0 +1,71 @@
+{% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar Aluno</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+h1 {
+  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1> Atualização de Aluno </h1>
+
+{% for alunos in alunos %}
+
+<form action="http://{{request.get_host}}/sistema/atualizar_alunos" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name='user_id' value="{{alunos.id}}">
+  <label>Nome: </label>
+  <input type="text" name="nome" value="{{alunos.nome}}"/>
+  <br></br>
+  <label>Sobrenome: </label>
+  <input type="text" name="sobrenome" value="{{alunos.sobrenome}}"/>
+  <br></br>
+  <label>CPF: </label>
+  <input type="text" name="cpf" value="{{alunos.cpf}}"/>
+  <br></br>
+  <label>Telefone: </label>
+  <input type="text" name="telefone" value="{{alunos.telefone}}"/>
+  <br></br>
+  <label>endereco: </label>
+  <input type="text" name="endereco" value="{{alunos.endereco}}"/>
+  <br></br>
+  <label>bairro: </label>
+  <input type="text" name="bairro" value="{{alunos.bairro}}"/>
+  <br></br>
+  <label>estado: </label>
+  <input type="text" name="estado" value="{{alunos.estado}}"/>
+  <br></br>
+  <label>cep: </label>
+  <input type="text" name="cep" value="{{alunos.cep}}"/>
+  <br></br>
+  <label>altura: </label>
+  <input type="text" name="altura" value="{{alunos.altura}}"/>
+  <br></br>
+  <label>peso: </label>
+  <input type="text" name="peso" value="{{alunos.peso}}"/>
+  <br></br>
+  <label>data da matrícula: </label>
+  <input type="date" name="data_matricula" value="{{alunos.data_matricula}}"/>
+  <br></br>
+  <label>data de nascimento: </label>
+  <input type="date" name="data_nascimento" value="{{alunos.data_nascimento}}"/>
+  <br></br>
+  <input type="submit" value="Enviar">
+
+</form>
+    <br/>
+
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+  <hr>
+
+{% endfor %}
+
+</body>
+</html> 
