@@ -22,7 +22,8 @@ input[type=submit]:hover {
 
 .topnav {
   overflow: hidden;
-  background-color: #fff;
+  background-color: #f0f0f0;
+  border-radius: 25px;
 }
 
 .topnav a {
@@ -51,12 +52,12 @@ input[type=submit]:hover {
 <div class="topnav">
   <a class="active" href="#home">Academia Django</a>
   <a href="http://{{request.get_host}}/admin">Admin</a>
-  <a href="#contact">Mensagens</a>
+  <a href="#contact">Eventos</a>
   <a href="#about">Suporte</a>
 </div>
 <br/><br/>
 
-    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Alunos </a>
+    <a style="background-color: #f0f0f0; border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Alunos </a>
 
 <br/><br/><br/>
 
@@ -96,7 +97,7 @@ input[type=submit]:hover {
 
 
 
-    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Instrutores </a>
+    <a style="background-color: #f0f0f0; border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Instrutores </a>
 <br/><br/><br/>
 
 
@@ -137,7 +138,7 @@ input[type=submit]:hover {
     <br/><br/><br/><br/>
 
 
-    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Treinos </a>
+    <a style="background-color: #f0f0f0; border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Treinos </a>
 <br/><br/><br/>
 
 <table>
@@ -145,7 +146,7 @@ input[type=submit]:hover {
     <tr>
         <th style="width: 50%">Início</th>
         <th scope="col">Fim</th>
-        <th scope="col">Rotina</th>
+        <th scope="col">Data</th>
         <th scope="col">Visualizar</th>
         <th scope="col">Atualizar</th>
         <th scope="col">Deletar</th>
@@ -162,7 +163,7 @@ input[type=submit]:hover {
     <tr>
         <td>{{ treinos.hora_inicio_treino }}</td>
         <td>{{ treinos.hora_fim_treino }}</td>
-        <td>{{ treinos.rotina }}</td>
+        <td>{{ treinos.data_treino }}</td>
         <td><a href="visualizar_treino/{{treinos.id}}">View</td>
         <td> <a href="atualizar_dados_treino/{{treinos.id}}">Update</td>
         <td><a href="deletar_treino/{{treinos.id}}">Del</td>
@@ -182,7 +183,7 @@ input[type=submit]:hover {
 
 
 
-    <a style="background-color: #fff; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Turmas </a>
+    <a style="background-color: #f0f0f0;  border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Turmas </a>
 <br/><br/><br/>
 
 <table>
@@ -220,7 +221,8 @@ input[type=submit]:hover {
     <form action="http://{{request.get_host}}/sistema/form_cadastro_turma">
     <input type="submit" value="Cadastrar Turma">
     </form>
-    <br/>
+    <br/><br/>    <br/><br/>
+
 
 
 </body>

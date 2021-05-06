@@ -100,10 +100,10 @@ def atualizar_dados_treino(request, user_id):
     return render(request, "atualizar_treino.html", contexto)
 
 def atualizar_dados_turma(request, user_id):
-    turmas = Turma.objects.filter(id=user_id)
+    turma = Turma.objects.filter(id=user_id)
 
     contexto = {
-        'turmas': turmas
+        'turma': turma
     }
     return render(request, "atualizar_turma.html", contexto)
     
@@ -172,6 +172,21 @@ def atualizar_treino(request):
 
         treino = Treino.objects.filter(id=user_id)
         treino.update(rotina=rotina, hora_fim_treino=hora_fim_treino, hora_inicio_treino=hora_inicio_treino, data_treino=data_treino, cod_instrutor=cod_instrutor, cod_aluno=cod_aluno)
+
+        return HttpResponseRedirect('/sistema/inicio')
+
+def atualizar_turma(request):
+    if request.method == 'POST':
+
+        atividade = request.POST.get('atividade')
+        hora_inicio_turma = request.POST.get('hora_inicio_turma')
+        hora_fim_turma = request.POST.get('hora_fim_turma')
+        data_turma = request.POST.get('data_turma')
+        instrutor = request.POST.get('instrutor')
+        user_id = request.POST.get('user_id')
+
+        turma = Turma.objects.filter(id=user_id)
+        turma.update(atividade=atividade, hora_inicio_turma=hora_inicio_turma, hora_fim_turma=hora_fim_turma, data_turma=data_turma, instrutor=instrutor)
 
         return HttpResponseRedirect('/sistema/inicio')
 

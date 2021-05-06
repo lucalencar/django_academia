@@ -5,25 +5,99 @@
     <title>Visualizar usuários</title>
     <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
 <style>
-h1 {
-  background-color: #202020;color: #fff;margin-top:0px; margin-bottom:50px; margin-left:50px; margin-right:70px;text-align:center;
+input[type=submit] {
+  background-color: #cecece;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+.topnav {
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+}
+
+.topnav a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #bb5d5d;
+  color: white;
 }
 </style>
 </head>
 <body>
+<div class="topnav">
+  <a class="active" href="http://{{request.get_host}}/sistema/inicio">Academia Django</a>
+  <a href="http://{{request.get_host}}/admin">Admin</a>
+  <a href="#contact">Mensagens</a>
+  <a href="#about">Suporte</a>
+</div>
+<br/><br/>
 
-<h1> Visualizar Aluno </h1>
+    <a style="background-color: #f0f0f0;color: #000; border-radius: 25px; padding: 14px 16px; text-align: center; float: center; font-size: 17px;"> Visualizar Aluno </a>
+<br/><br/><br/>
+
 
 {% for alunos in alunos %}
-
-<h3> Nome: {{alunos.nome}} </h3>
-<h3> Sobrenome: {{alunos.sobrenome}} </h3>
-<h3> CPF: {{alunos.cpf}} </h3>
-<h3> Telefone: {{alunos.telefone}} </h3>
-<hr>
-
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Nome </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.nome}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Sobrenome </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.sobrenome}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> CPF </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.cpf}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Gênero </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.genero}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Matrícula </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.data_matricula}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Nascimento </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.data_nascimento}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Endereço </a>
+<a style="background-color: #303030;color: #fff; width: 150px; max-width: 700px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.endereco}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Bairro </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.bairro}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">UF </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.estado}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">CEP </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.cep}}  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Peso </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.peso}}kg  </a>
+<br/><br/><br/>
+<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Altura </a>
+<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{alunos.altura}} metros  </a>
+<br/><br/><br/>
 
 {% endfor %}
+<br/><br/><br/>
 
     <form action="http://{{request.get_host}}/sistema/inicio">
     <input type="submit" value="Voltar">
