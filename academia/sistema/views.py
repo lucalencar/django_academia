@@ -88,7 +88,7 @@ def atualizar_dados_aluno(request, user_id):
         }
 
         return render(request, "atualizar_aluno.html", contexto)
-        #clientes.update(nome=nome, sobrenome=sobrenome, cpf=cpf, telefone=telefone)
+
 
 def atualizar_dados_treino(request, user_id):
     treinos = Treino.objects.filter(id=user_id)
@@ -242,10 +242,7 @@ def cadastro_aluno(request):
         aluno.data_matricula = request.POST.get('data_matricula')
         aluno.telefone = request.POST.get('telefone')
         aluno.save()
- 
-     #   response = {
-     #       'response': HTTP_200_OK
-     #   }
+
 
     return HttpResponseRedirect('/sistema/inicio')  
 
@@ -262,14 +259,9 @@ def cadastro_instrutor(request):
         instrutor.titulacao = request.POST.get('titulacao')
         instrutor.save()
 
-    #    response = {
-    #        'response': HTTP_200_OK
-    #    }
 
     return HttpResponseRedirect('/sistema/inicio')
-    #return HttpResponse(json.dumps(response))       
 
-''
 def cadastro_treino(request):
     
 
@@ -283,11 +275,8 @@ def cadastro_treino(request):
         treino.cod_instrutor = request.POST.get('cod_instrutor')
         treino.save()
 
-        response = {
-            'response': HTTP_200_OK
-        }
 
-    return HttpResponse(json.dumps(response))
+    return HttpResponseRedirect('/sistema/inicio')
 
 def cadastro_turma(request):
 
@@ -300,9 +289,5 @@ def cadastro_turma(request):
         turma.data_turma = request.POST.get('data_turma')
         turma.alunos = request.POST.get('alunos')
         turma.instrutor = request.POST.get('instrutor')
-    
-        response = {
-            'response': HTTP_200_OK
-        }
 
-    return HttpResponse(json.dumps(response))
+    return HttpResponseRedirect('/sistema/inicio')

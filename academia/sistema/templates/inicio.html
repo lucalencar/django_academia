@@ -2,58 +2,18 @@
  <!DOCTYPE html>
 <html>
 <head>
-<title>Início</title>
+<title>Sistema Academia Django</title>
 <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
 <style>
-
-input[type=submit] {
-  background-color: #cecece;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: left;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-  }
-
-.topnav {
-  overflow: hidden;
-  background-color: #f0f0f0;
-  border-radius: 25px;
-}
-
-.topnav a {
-  float: left;
-  color: #000;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #bb5d5d;
-  color: white;
-}
-
 </style>
 </head>
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Academia Django</a>
-  <a href="http://{{request.get_host}}/admin">Admin</a>
-  <a href="#contact">Eventos</a>
-  <a href="#about">Suporte</a>
+    <a class="active" href="http://{{request.get_host}}/sistema/inicio">Academia Django</a>
+    <a href="http://{{request.get_host}}/admin" target="_blank">Admin</a>
+    <a href="#emconstrucao">Eventos</a>
+    <a href="mailto:suporte@academiadjango.com">Suporte</a>
 </div>
 <br/><br/>
 
@@ -65,14 +25,15 @@ input[type=submit]:hover {
 <thread>
 
     <tr>
-        <th style="width: 50%">Nome</th>
-        <th scope="col">Sobrenome</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Visualizar</th>
-        <th scope="col">Atualizar</th>
-        <th scope="col">Deletar</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>CPF</th>
+        <th>Visualizar</th>
+        <th>Atualizar</th>
+        <th>Deletar</th>
     </tr>
 </thread>
+
     {% for alunos in alunos  %}
 
     <tr>
@@ -93,7 +54,7 @@ input[type=submit]:hover {
     <form action="http://{{request.get_host}}/sistema/form_cadastro_aluno">
     <input type="submit" value="Cadastrar Aluno">
     </form>
-    <br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 
 
@@ -105,17 +66,18 @@ input[type=submit]:hover {
 <thread>
     <tr>
         <th style="width: 50%">Nome</th>
-        <th scope="col">Sobrenome</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Visualizar</th>
-        <th scope="col">Atualizar</th>
-        <th scope="col">Deletar</th>
+        <th>Sobrenome</th>
+        <th>CPF</th>
+        <th>Visualizar</th>
+        <th>Atualizar</th>
+        <th>Deletar</th>
 
 
     </tr>
 </thread>
+
     {% for instrutor in instrutor  %}
-<tbody>
+
     <tr>
         <td>{{ instrutor.nome }}</td>
         <td>{{ instrutor.sobrenome }}</td>
@@ -145,11 +107,11 @@ input[type=submit]:hover {
 <thread>
     <tr>
         <th style="width: 50%">Início</th>
-        <th scope="col">Fim</th>
-        <th scope="col">Data</th>
-        <th scope="col">Visualizar</th>
-        <th scope="col">Atualizar</th>
-        <th scope="col">Deletar</th>
+        <th>Fim</th>
+        <th>Data</th>
+        <th>Visualizar</th>
+        <th>Atualizar</th>
+        <th>Deletar</th>
 
 
     </tr>
@@ -157,9 +119,6 @@ input[type=submit]:hover {
 
     {% for treinos in treinos  %}
 
-
-
-<tbody>
     <tr>
         <td>{{ treinos.hora_inicio_treino }}</td>
         <td>{{ treinos.hora_fim_treino }}</td>
@@ -190,11 +149,11 @@ input[type=submit]:hover {
 <thread>
     <tr>
         <th style="width: 50%">Início</th>
-        <th scope="col">Fim</th>
-        <th scope="col">Atividade</th>
-        <th scope="col">Visualizar</th>
-        <th scope="col">Atualizar</th>
-        <th scope="col">Deletar</th>
+        <th>Fim</th>
+        <th>Atividade</th>
+        <th>Visualizar</th>
+        <th>Atualizar</th>
+        <th>Deletar</th>
 
 
     </tr>
@@ -202,7 +161,6 @@ input[type=submit]:hover {
 
     {% for turmas in turmas  %}
 
-<tbody>
     <tr>
         <td>{{ turmas.hora_inicio_turma }}</td>
         <td>{{ turmas.hora_fim_turma }}</td>

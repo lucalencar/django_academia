@@ -9,4 +9,3 @@ admin.site.register(Instrutor)
 admin.site.register(Treino)
 admin.site.register(Turma)
 
-# Register your models here.
