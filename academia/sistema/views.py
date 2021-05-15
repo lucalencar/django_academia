@@ -319,7 +319,6 @@ def logar_usuario(request):
         else:
             messages.error(request,'username ou senha incorretos!')
             return HttpResponseRedirect('/sistema/logar_usuario')
-            #form_login = AuthenticationForm()
     else:
         form_login = AuthenticationForm()
     return render(request, 'login.html', {'form_login': form_login})
