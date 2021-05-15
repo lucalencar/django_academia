@@ -12,9 +12,15 @@
 <div class="topnav">
     <a class="active" href="http://{{request.get_host}}/sistema/inicio">Academia Django</a>
     <a href="http://{{request.get_host}}/admin" target="_blank">Admin</a>
-    <a href="#emconstrucao">Eventos</a>
-    <a href="mailto:suporte@academiadjango.com">Suporte</a>
+    <a href="http://{{request.get_host}}/sistema/cadastrar_usuario">Cadastro</a>
+    <a href="http://{{request.get_host}}/sistema/logar_usuario">Login</a>
 </div>
+{% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Olá {{ user.username }}, você está logado! 
+        <span class="sair"><a href="http://{{request.get_host}}/sistema/deslogar_usuario">Sair</a></span>
+    </p>
+{% endif %}
 <br/><br/>
 
     <a style="background-color: #303030;color: #fff; border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Atualizar Turma </a>
@@ -23,6 +29,7 @@
 
 
 {% for turma in turma %}
+<div class="container">
 
 <form action="http://{{request.get_host}}/sistema/atualizar_turma" method="POST">
   {% csrf_token %}
@@ -49,12 +56,6 @@
 
 </form>
     <br/>  <br></br>
-
-
-    <form action="http://{{request.get_host}}/sistema/inicio">
-    <input type="submit" value="Voltar">
-    </form>
-
 
 {% endfor %}
 

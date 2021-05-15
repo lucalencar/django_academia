@@ -4,6 +4,11 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.status import HTTP_200_OK
 from .models import Aluno, Instrutor, Treino, Turma
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
 # Create your views here.
 
 def inicio(request):
@@ -291,3 +296,36 @@ def cadastro_turma(request):
         turma.instrutor = request.POST.get('instrutor')
 
     return HttpResponseRedirect('/sistema/inicio')
+
+def cadastrar_usuario(request):
+    if request.method == "POST":
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return HttpResponseRedirect('/sistema/inicio')
+    else:
+        form_usuario = UserCreationForm()
+
+    return render(request, 'cadastro.html', {'form_usuario': form_usuario})
+
+def logar_usuario(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        usuario = authenticate(request, username=username, password=password)
+        if usuario is not None:
+            login(request, usuario)
+            return HttpResponseRedirect('/sistema/inicio')
+        else:
+            messages.error(request,'username ou senha incorretos!')
+            return HttpResponseRedirect('/sistema/logar_usuario')
+            #form_login = AuthenticationForm()
+    else:
+        form_login = AuthenticationForm()
+    return render(request, 'login.html', {'form_login': form_login})
+
+
+def deslogar_usuario(request):
+    logout(request)
+    return HttpResponseRedirect('/sistema/inicio')
+

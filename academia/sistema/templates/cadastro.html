@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuários</title>
+        <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+</head>
+<body>
+
+<div class="topnav">
+    <a class="active" href="http://{{request.get_host}}/sistema/inicio">Academia Django</a>
+    <a href="http://{{request.get_host}}/admin" target="_blank">Admin</a>
+    <a href="http://{{request.get_host}}/sistema/cadastrar_usuario">Cadastro</a>
+    <a href="http://{{request.get_host}}/sistema/logar_usuario">Login</a>
+</div>
+{% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Olá {{ user.username }}, você está logado! 
+        <span class="sair"><a href="http://{{request.get_host}}/sistema/deslogar_usuario">Sair</a></span>
+    </p>
+{% endif %}
+<br/><br/>
+
+<a style="background-color: #f0f0f0;color: #000; border-radius: 25px; padding: 14px 16px; text-align: center; float: center; font-size: 17px;"> Cadastro de Usuário </a>
+<br/><br/><br/>
+
+<div class="container">
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+    <div class="form-group">
+        {{form_usuario.username.errors}}
+        <label>Username: </label>
+    </div>
+              <div class="col-75">
+        {{form_usuario.username}}
+    </div>
+    </div>
+<br/><br/>
+<br/><br/>
+    <div class="row">
+      <div class="col-25">
+    <div class="form-group">
+        {{form_usuario.password1.errors}}
+        <label>Senha: </label>
+<br/>
+
+        {{form_usuario.password1}}
+    </div>
+     <div class="row">
+      <div class="col-25">
+<br/>
+
+    <div class="form-group">
+        {{form_usuario.password2.errors}}
+        <label>Confirmar senha: </label>
+        {{form_usuario.password2}}
+    </div>
+
+<br/><br/>
+
+    <div class="form-group">
+        <input type="submit" value="Cadastrar" class="btn btn-primary">
+    </div>
+</form>
+
+<br/><br/>
+<div class="container">
+  <form action="cadastrar_usuario" method="POST">
+  {% csrf_token %}
+
+
+
+</body>
+</html>

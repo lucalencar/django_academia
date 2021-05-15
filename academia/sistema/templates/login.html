@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Sistema Academia Django</title>
+<link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+<style>
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+    <a class="active" href="http://{{request.get_host}}/sistema/inicio">Academia Django</a>
+    <a href="http://{{request.get_host}}/admin" target="_blank">Admin</a>
+    <a href="http://{{request.get_host}}/sistema/cadastrar_usuario">Cadastro</a>
+    <a href="http://{{request.get_host}}/sistema/logar_usuario">Login</a>
+</div>
+{% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Olá {{ user.username }}, você está logado! 
+        <span class="sair"><a href="http://{{request.get_host}}/sistema/deslogar_usuario">Sair</a></span>
+    </p>
+{% endif %}
+<br/><br/>
+
+    <a style="background-color: #f0f0f0; border-radius: 25px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Login </a>
+
+<br/><br/><br/>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} style="background-color: #ffaf3e; color: black; padding: 14px 16px; text-align: center; float: left;" class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<br/><br/><br/>
+<div class="container">
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+    <div class="form-group">
+        {{form_login.username.errors}}
+        <label>Username: </label>
+    </div>
+              <div class="col-75">
+        {{form_login.username}}
+    </div>
+    
+    </div>
+<br/><br/>
+<br/><br/>
+    <div class="row">
+      <div class="col-25">
+    <div class="form-group">
+        {{form_login.password.errors}}
+        <label>Senha: </label>
+<br/>
+        {{form_login.password}}
+    </div>
+
+<br/><br/>
+
+    <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </div>
+</form>
+
+
+
+</body>
+</html>

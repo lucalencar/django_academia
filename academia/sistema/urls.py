@@ -28,7 +28,10 @@ urlpatterns = [
     path('deletar_aluno/<int:user_id>', views.deletar_aluno, name="deletar_aluno"),
     path('deletar_instrutor/<int:user_id>', views.deletar_instrutor, name="deletar_instrutor"),
     path('deletar_treino/<int:user_id>', views.deletar_instrutor, name="deletar_treino"),
-    path('deletar_turma/<int:user_id>', views.deletar_instrutor, name="deletar_turma")
+    path('deletar_turma/<int:user_id>', views.deletar_instrutor, name="deletar_turma"),
+    path('cadastrar_usuario', views.cadastrar_usuario, name="cadastrar_usuario"),
+    path('logar_usuario', views.logar_usuario, name="logar_usuario"),
+    path('deslogar_usuario', views.deslogar_usuario, name="deslogar_usuario")
 
 
 ]
