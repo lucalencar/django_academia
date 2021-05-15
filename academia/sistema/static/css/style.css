@@ -1,7 +1,9 @@
 
 body {
-  background: #79aec8;
+  background: #a9bbd2 url("/static/images/Commonality.png") no-repeat;
+  background-size: cover;  
 }
+
 
 .c {
   text-align: right;
@@ -48,7 +50,9 @@ body {
   
 
 table {
-    border: 0px solid #606060; background-color: #000;
+    border: 2px solid #79aec8;
+    border-radius: 5px; 
+    background-color: #f0f0f0;
     width: 50%;
     table-layout: fixed;
 }
@@ -59,7 +63,7 @@ thead
 }
 
 th {
-    width: 50%;border: 0px solid #606060; color: white; background-color: #666666;text-align: center; border-collapse: collapse;
+    width: 50%;border: 0px solid #606060; color: #000; background-color: #b5b5b5;text-align: center; border-collapse: collapse;
 }
 
 td {
@@ -89,4 +93,8 @@ td {
   content: "";
   display: table;
   clear: both;
+}
+
+.asessao {
+  background-color: #f0f0f0; border-radius: 15px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;  
 }

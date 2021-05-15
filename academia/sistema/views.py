@@ -6,7 +6,6 @@ from rest_framework.status import HTTP_200_OK
 from .models import Aluno, Instrutor, Treino, Turma
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
 from django.contrib import messages
 
 # Create your views here.
@@ -327,4 +326,3 @@ def logar_usuario(request):
 def deslogar_usuario(request):
     logout(request)
     return HttpResponseRedirect('/sistema/inicio')
-

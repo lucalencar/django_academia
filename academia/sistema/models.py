@@ -192,6 +192,7 @@ class Treino(models.Model):
 
 class Turma(models.Model):
 
+
     atividade = models.CharField(
         max_length = 300,
         null = False,
@@ -226,6 +227,3 @@ class Turma(models.Model):
     )
 
     objects = models.Manager()
-
-
-
