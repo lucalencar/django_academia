@@ -14,6 +14,13 @@
     <a href="http://{{request.get_host}}/admin" target="_blank">Admin</a>
     <a href="http://{{request.get_host}}/sistema/cadastrar_usuario">Cadastro</a>
     <a href="http://{{request.get_host}}/sistema/logar_usuario">Login</a>
+<div class="c">
+    <p id="demo"></p>
+</div>
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
 </div>
 {% if user.is_authenticated %}
     <p class="logged-in-p">

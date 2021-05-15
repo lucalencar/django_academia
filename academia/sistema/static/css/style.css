@@ -1,4 +1,11 @@
-body{background: #79aec8}
+
+body {
+  background: #79aec8;
+}
+
+.c {
+  text-align: right;
+} 
 
 .topnav {
     overflow: hidden;
@@ -10,7 +17,7 @@ body{background: #79aec8}
     float: left;
     color: #000;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 18px;
     text-decoration: none;
     font-size: 17px;
   }
