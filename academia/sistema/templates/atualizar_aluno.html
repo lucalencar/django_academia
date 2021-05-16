@@ -87,13 +87,17 @@ document.getElementById("demo").innerHTML = d.toDateString();
   <input type="submit" value="Enviar">
 
 </form>
-    <br/><br/>
-    <br/><br/>
 
-
-
-
+<br/><br/>
+ </div>
 {% endfor %}
+
+    <br/>
+    <form action="http://{{request.get_host}}/sistema/inicio">
+    <input type="submit" value="Voltar">
+    </form>
+<br/><br/><br/><br/>
+
 
 </body>
 </html> 

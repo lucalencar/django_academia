@@ -33,16 +33,16 @@ document.getElementById("demo").innerHTML = d.toDateString();
 
 <br/><br/>
 
-    <a class="asessao"> Alunos </a>
+<a class="asessao"> Alunos </a>
 
 <br/><br/>
 
-<br/><br/>
+<br/>
 <table cellpadding="0" cellspacing="0">
     <tr>
         <th class="th1" >Nome</th>
         <th class="th1">Sobrenome</th>
-        <th>CPF</th>
+        <th>telefone</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -50,11 +50,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
 </thread>
 
     {% for alunos in alunos  %}
-
     <tr>
         <td>{{ alunos.nome }}</td>
         <td>{{ alunos.sobrenome }}</td>
-        <td class="td2">{{ alunos.cpf }}</td>
+        <td class="td2">{{ alunos.telefone }}</td>
         <td class="td1"><a href="visualizar_aluno/{{alunos.id}}">View</td>
         <td  class="td1"> <a href="atualizar_dados_aluno/{{alunos.id}}">Update</td>
         <td class="td1"><a href="deletar_aluno/{{alunos.id}}">Del</td>
@@ -79,9 +78,9 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <table  cellpadding="0" cellspacing="0">
 <thread>
     <tr>
-        <th style="width: 50%">Nome</th>
-        <th>Sobrenome</th>
-        <th>CPF</th>
+        <th class="td3">Nome</th>
+        <th class="td3">Sobrenome</th>
+        <th>telefone</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -95,7 +94,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ instrutor.nome }}</td>
         <td>{{ instrutor.sobrenome }}</td>
-        <td  class="td2">{{ instrutor.cpf }}</td>
+        <td  class="td2">{{ instrutor.telefone }}</td>
         <td  class="td1"><a href="visualizar_instrutor/{{instrutor.id}}">View</td>
         <td   class="td1"> <a href="atualizar_dados_instrutor/{{instrutor.id}}">Update</td>
         <td   class="td1"><a href="deletar_instrutor/{{instrutor.id}}">Del</td>
@@ -120,8 +119,8 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <table  cellpadding="0" cellspacing="0">
 <thread>
     <tr>
-        <th style="width: 50%">Início</th>
-        <th>Fim</th>
+        <th class="td3">Início</th>
+        <th class="td3">Fim</th>
         <th>Data</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
@@ -162,8 +161,8 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <table  cellpadding="0" cellspacing="0">
 <thread>
     <tr>
-        <th style="width: 50%">Início</th>
-        <th>Fim</th>
+        <th class="td3">Início</th>
+        <th class="td3">Fim</th>
         <th>Atividade</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
@@ -194,7 +193,6 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <input type="submit" value="Cadastrar Turma">
     </form>
     <br/><br/>    <br/><br/>
-
 
 </body>
 </html> 

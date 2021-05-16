@@ -32,6 +32,4 @@ urlpatterns = [
     path('cadastrar_usuario', views.cadastrar_usuario, name="cadastrar_usuario"),
     path('logar_usuario', views.logar_usuario, name="logar_usuario"),
     path('deslogar_usuario', views.deslogar_usuario, name="deslogar_usuario")
-
-
 ]
