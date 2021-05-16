@@ -4,7 +4,6 @@ body {
   background-size: cover;  
 }
 
-
 .c {
   text-align: right;
 } 
@@ -13,6 +12,7 @@ body {
     overflow: hidden;
     background-color: #f0f0f0;
     border-radius: 10px;
+    top: 0;
   }
   
   .topnav a {
@@ -31,7 +31,7 @@ body {
   
   .topnav a.active {
     background-color: #bb5d5d;
-    color: white;
+    color: white;    
   }
 
   input[type=submit] {
@@ -50,8 +50,8 @@ body {
   
 
 table {
-    border: 2px solid #79aec8;
-    border-radius: 5px; 
+    border: 2px solid #f0f0f0;
+    border-radius: 4px; 
     background-color: #f0f0f0;
     width: 50%;
     table-layout: fixed;
@@ -60,10 +60,11 @@ table {
 thead
 {
     display: table-row;
+    
 }
 
 th {
-    width: 50%;border: 0px solid #606060; color: #000; background-color: #b5b5b5;text-align: center; border-collapse: collapse;
+    width: 50%;border: 0px solid #606060; color: #282828; background-color: #b5b5b5;text-align: center; border-collapse: collapse;
 }
 
 td {

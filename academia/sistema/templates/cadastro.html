@@ -58,7 +58,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 {% endif %}
 <br/><br/>
 
-<a style="background-color: #f0f0f0;color: #000; border-radius: 25px; padding: 14px 16px; text-align: center; float: center; font-size: 17px;"> Cadastro de Usuário </a>
+<a class="asessao"> Cadastro de Usuário </a>
 <br/><br/><br/>
 
 <div class="container">
@@ -71,7 +71,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
         {{form_usuario.username.errors}}
         <label>Username: </label>
     </div>
-              <div class="col-75">
+              <div class="col-75" required>
         {{form_usuario.username}}
     </div>
     </div>
@@ -79,7 +79,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <br/><br/>
     <div class="row">
       <div class="col-25">
-    <div class="form-group">
+    <div class="form-group" required>
         {{form_usuario.password1.errors}}
         <label>Senha: </label>
 <br/>
@@ -90,7 +90,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
       <div class="col-25">
 <br/>
 
-    <div class="form-group">
+    <div class="form-group" required>
         {{form_usuario.password2.errors}}
         <label>Confirmar senha: </label>
         {{form_usuario.password2}}
