@@ -301,7 +301,7 @@ def cadastrar_usuario(request):
         form_usuario = UserCreationForm(request.POST)
         if form_usuario.is_valid():
             form_usuario.save()
-            return HttpResponseRedirect('/sistema/inicio')
+            return HttpResponseRedirect('/sistema/logar_usuario')
     else:
         form_usuario = UserCreationForm()
 

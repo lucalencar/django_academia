@@ -11,6 +11,7 @@
   background-color: #f2f2f2;
   padding: 20px;
   width: 15%;
+  text-align: left;
 }
 
 </style>
@@ -40,8 +41,6 @@ document.getElementById("demo").innerHTML = d.toDateString();
 
 <a class="asessao"> Login </a>
 
-<br/><br/>
-
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -60,12 +59,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
         {{form_login.username.errors}}
         <label>Username: </label>
     <br/>
-              <div class="col-75" required>
         {{form_login.username}}
     </div>
     
     
-<br/><br/><br/>
 
     <div class="row">
       <div class="col-25">
@@ -79,7 +76,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <br/><br/>
 
     <div class="form-group">
-        <input type="submit" value="Logar" class="btn btn-primary">
+        <input type="submit" value="Entrar" class="btn btn-primary">
     </div>
 </form>
     <br/><br/><br/><br/>

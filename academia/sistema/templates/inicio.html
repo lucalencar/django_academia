@@ -54,17 +54,16 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ alunos.nome }}</td>
         <td>{{ alunos.sobrenome }}</td>
-        <td>{{ alunos.cpf }}</td>
-        <td><a href="visualizar_aluno/{{alunos.id}}">View</td>
-        <td> <a href="atualizar_dados_aluno/{{alunos.id}}">Update</td>
-        <td><a href="deletar_aluno/{{alunos.id}}">Del</td>
+        <td class="td2">{{ alunos.cpf }}</td>
+        <td class="td1"><a href="visualizar_aluno/{{alunos.id}}">View</td>
+        <td  class="td1"> <a href="atualizar_dados_aluno/{{alunos.id}}">Update</td>
+        <td class="td1"><a href="deletar_aluno/{{alunos.id}}">Del</td>
 
     </tr>
 </thread>
     {% endfor %}
 
 </table>
-
     <br/>
     <form action="http://{{request.get_host}}/sistema/form_cadastro_aluno">
     <input type="submit" value="Cadastrar Aluno">
@@ -96,10 +95,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ instrutor.nome }}</td>
         <td>{{ instrutor.sobrenome }}</td>
-        <td>{{ instrutor.cpf }}</td>
-        <td><a href="visualizar_instrutor/{{instrutor.id}}">View</td>
-        <td> <a href="atualizar_dados_instrutor/{{instrutor.id}}">Update</td>
-        <td><a href="deletar_instrutor/{{instrutor.id}}">Del</td>
+        <td  class="td2">{{ instrutor.cpf }}</td>
+        <td  class="td1"><a href="visualizar_instrutor/{{instrutor.id}}">View</td>
+        <td   class="td1"> <a href="atualizar_dados_instrutor/{{instrutor.id}}">Update</td>
+        <td   class="td1"><a href="deletar_instrutor/{{instrutor.id}}">Del</td>
 
     </tr>
 </thread>
@@ -137,10 +136,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ treinos.hora_inicio_treino }}</td>
         <td>{{ treinos.hora_fim_treino }}</td>
-        <td>{{ treinos.data_treino }}</td>
-        <td><a href="visualizar_treino/{{treinos.id}}">View</td>
-        <td> <a href="atualizar_dados_treino/{{treinos.id}}">Update</td>
-        <td><a href="deletar_treino/{{treinos.id}}">Del</td>
+        <td class="td1">{{ treinos.data_treino }}</td>
+        <td   class="td1"><a href="visualizar_treino/{{treinos.id}}">View</td>
+        <td   class="td1"> <a href="atualizar_dados_treino/{{treinos.id}}">Update</td>
+        <td   class="td1"><a href="deletar_treino/{{treinos.id}}">Del</td>
 
     </tr>
 </thread>
@@ -179,10 +178,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ turmas.hora_inicio_turma }}</td>
         <td>{{ turmas.hora_fim_turma }}</td>
-        <td>{{ turmas.atividade }}</td>
-        <td><a href="visualizar_turma/{{turmas.id}}">View</td>
-        <td> <a href="atualizar_dados_turma/{{turmas.id}}">Update</td>
-        <td><a href="deletar_turma/{{turmas.id}}">Del</td>
+        <td class="td1">{{ turmas.atividade }}</td>
+        <td   class="td1"><a href="visualizar_turma/{{turmas.id}}">View</td>
+        <td   class="td1"> <a href="atualizar_dados_turma/{{turmas.id}}">Update</td>
+        <td   class="td1"><a href="deletar_turma/{{turmas.id}}">Del</td>
 
     </tr>
 </thread>
