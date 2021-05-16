@@ -30,28 +30,28 @@ document.getElementById("demo").innerHTML = d.toDateString();
 {% endif %}
 <br/><br/>
 
-    <a style="background-color: #f0f0f0;color: #000; border-radius: 25px; padding: 14px 16px; text-align: center; float: center; font-size: 17px;"> Visualizar Treino </a>
-<br/><br/><br/>
+    <a class="asessao"> Dados do Treino </a>
+<br/><br/><br/><br/>
 
 
 {% for treinos in treinos %}
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Início </a>
-<a style="background-color: #303030;color: #fff; width: 150px; max-width: 500px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.hora_inicio_treino}}  </a>
+<a class="nome1">Início </a>
+<a class="hora1"> {{treinos.hora_inicio_treino}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Fim </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.hora_fim_treino}}  </a>
+<a class="nome1">Fim </a>
+<a class="hora1"> {{treinos.hora_fim_treino}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Data </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.data_treino}}  </a>
+<a class="nome1">Data </a>
+<a class="hora1"> {{treinos.data_treino}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Rotina </a>
-<a style="background-color: #303030;color: #fff; width: 500px; max-width: 1500px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.rotina}}  </a>
+<a class="nome1">Rotina </a>
+<a class="rotina"> {{treinos.rotina}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Instrutor </a>
-<a style="background-color: #303030;color: #fff; width: 150px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.cod_instrutor_id}} </a>
+<a class="nome1">Instrutor </a>
+<a class="nome2"> {{treinos.cod_instrutor_id}} </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;">Aluno </a>
-<a style="background-color: #303030;color: #fff; width: 150px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{treinos.cod_aluno_id}}  </a>
+<a class="nome1">Aluno </a>
+<a class="nome2"> {{treinos.cod_aluno_id}}  </a>
 <br/><br/><br/>
 
 

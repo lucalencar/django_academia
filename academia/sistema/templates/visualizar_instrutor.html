@@ -30,25 +30,25 @@ document.getElementById("demo").innerHTML = d.toDateString();
 {% endif %}
 <br/><br/>
 
-    <a style="background-color: #f0f0f0;color: #000; border-radius: 25px; padding: 14px 16px; text-align: center; float: center; font-size: 17px;"> Visualizar Instrutor </a>
-<br/><br/><br/>
+    <a class="asessao"> Dados </a>
+<br/><br/><br/><br/>
 
 
 {% for instrutor in instrutor %}
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Titulação </a>
-<a style="background-color: #303030;color: #fff; width: 150px; max-width: 500px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{instrutor.titulacao}}  </a>
+<a class="nome1"> Titulação </a>
+<a class="titulacao"> {{instrutor.titulacao}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Nome </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{instrutor.nome}}  </a>
+<a class="nome1"> Nome </a>
+<a class="nome2"> {{instrutor.nome}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Sobrenome </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{instrutor.sobrenome}}  </a>
+<a class="nome1"> Sobrenome </a>
+<a class="sobrenome"> {{instrutor.sobrenome}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> CPF </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{instrutor.cpf}}  </a>
+<a class="nome1"> CPF </a>
+<a class="cpf"> {{instrutor.cpf}}  </a>
 <br/><br/><br/>
-<a style="background-color: #d4d4d4;color: #000; width: 100px; padding: 14px 16px; text-align: center; float: left; font-size: 17px;"> Gênero </a>
-<a style="background-color: #303030;color: #fff; width: 100px; padding: 14px 16px; text-align: left; float: left; font-size: 17px;"> {{instrutor.genero}}  </a>
+<a class="nome1"> Gênero </a>
+<a class="genero"> {{instrutor.genero}}  </a>
 <br/><br/><br/>
 
 

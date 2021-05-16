@@ -10,27 +10,9 @@
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 11%;
+  width: 15%;
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 </style>
 </head>
 <body>
@@ -73,18 +55,18 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <form method="post">
     {% csrf_token %}
     <div class="row">
-      <div class="col-25">
-    <div class="form-group">
+      <div class="col-75">
+    <div class="form-group" required>
         {{form_login.username.errors}}
         <label>Username: </label>
-    </div>
+    <br/>
               <div class="col-75" required>
         {{form_login.username}}
     </div>
     
-    </div>
-<br/><br/>
-<br/><br/>
+    
+<br/><br/><br/>
+
     <div class="row">
       <div class="col-25">
     <div class="form-group" required>
