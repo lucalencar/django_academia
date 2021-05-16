@@ -40,11 +40,11 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <br/><br/>
 
 <a class="asessao"> Login </a>
-
+<br/><br/>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} style="background-color: #ffaf3e; color: black; padding: 14px 16px; text-align: center; float: left;" class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <li{% if message.tags %} style="background-color: #fff36f; color: #303030; border: 2px #fff36f solid; border-radius: 5px; padding: 14px 16px; text-align: center; float: left;" class="{{ message.tags }}"{% endif %}>{{ message }}</li>
     {% endfor %}
 </ul>
 {% endif %}
