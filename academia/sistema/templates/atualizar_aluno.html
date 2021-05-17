@@ -35,7 +35,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 
 
 {% for alunos in alunos %}
-<div class="container">
+<div class="container2">
 
 <form action="http://{{request.get_host}}/sistema/atualizar_alunos" method="POST">
   {% csrf_token %}
@@ -60,28 +60,28 @@ document.getElementById("demo").innerHTML = d.toDateString();
   <label>Telefone: </label>
   <input type="text" name="telefone" value="{{alunos.telefone}}"/>
   <br></br>
-  <label>endereco: </label>
+  <label>Endereço: </label>
   <input type="text" name="endereco" value="{{alunos.endereco}}"/>
   <br></br>
-  <label>bairro: </label>
+  <label>Bairro: </label>
   <input type="text" name="bairro" value="{{alunos.bairro}}"/>
   <br></br>
-  <label>estado: </label>
+  <label>Estado: </label>
   <input type="text" name="estado" value="{{alunos.estado}}"/>
   <br></br>
-  <label>cep: </label>
+  <label>Cep: </label>
   <input type="text" name="cep" value="{{alunos.cep}}"/>
   <br></br>
-  <label>altura: </label>
+  <label>Altura: </label>
   <input type="text" name="altura" value="{{alunos.altura}}"/>
   <br></br>
-  <label>peso: </label>
+  <label>Peso: </label>
   <input type="text" name="peso" value="{{alunos.peso}}"/>
   <br></br>
-  <label>data da matrícula: </label>
+  <label>Data da matrícula: </label>
   <input type="text" value="{{alunos.data_matricula|date:"Y-m-d" }}" name="data_matricula" value="{{alunos.data_matricula}}"/>
   <br></br>
-  <label>data de nascimento: </label>
+  <label>Data de nascimento: </label>
   <input type="text" value="{{alunos.data_nascimento|date:"Y-m-d" }}" name="data_nascimento" value="{{alunos.data_nascimento}}"/>
   <br></br>
   <input type="submit" value="Enviar">

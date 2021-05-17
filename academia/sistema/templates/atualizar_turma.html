@@ -36,7 +36,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 
 
 {% for turma in turma %}
-<div class="container">
+<div class="container2">
 
 <form action="http://{{request.get_host}}/sistema/atualizar_turma" method="POST">
   {% csrf_token %}

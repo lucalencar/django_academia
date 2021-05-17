@@ -18,7 +18,7 @@ blockquote {
 .topnav {
     overflow: hidden;
     background-color: #f0f0f0;
-    border-radius: 10px;
+    border-radius: 8px;
     top: 0;
   }
   
@@ -59,7 +59,7 @@ blockquote {
 
 table {
     border: 4px solid #f0f0f0;
-    border-radius: 5px; 
+    border-radius: 10px; 
     background-color: #f0f0f0;
     width: 50%;
     table-layout: fixed;
@@ -67,9 +67,9 @@ table {
 }
 
 tbody {
-    height: 250px;       /* Just for the demo          */
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
+    height: 300px;  
+    overflow-y: auto;    
+    overflow-x: hidden;  
     display: block;
 }
 
@@ -77,16 +77,16 @@ thead
 {
     display: table-row;     
     display: block;
+
 }
 
 th {
     width: 50%; color: #303030; background-color: #fff36f;text-align: center; 
     font-size: 15px;
     height:30px;
-    padding: 10px;
+    padding: 13px;
     width:40%;
     left:10px;
-    border: 3px solid #fff36f;
 }
 
 .th1 {
@@ -114,11 +114,22 @@ td {
     background-color: #fff36f; color: #282828; text-align: left;
 }
 
+.td4 {
+    background-color: #f0f0f0; color: #282828; text-align: left;
+}
+
 
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+.container2 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 25%;
 }
 
 .col-25 {

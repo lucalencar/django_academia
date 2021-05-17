@@ -42,7 +42,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <th class="th1" >Nome</th>
         <th class="th1">Sobrenome</th>
-        <th>telefone</th>
+        <th class="th1">Telefone</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -53,7 +53,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ alunos.nome }}</td>
         <td>{{ alunos.sobrenome }}</td>
-        <td class="td2">{{ alunos.telefone }}</td>
+        <td class="td4">{{ alunos.telefone }}</td>
         <td class="td1"><a href="visualizar_aluno/{{alunos.id}}">View</td>
         <td  class="td1"> <a href="atualizar_dados_aluno/{{alunos.id}}">Update</td>
         <td class="td1"><a href="deletar_aluno/{{alunos.id}}">Del</td>
@@ -63,6 +63,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     {% endfor %}
 
 </table>
+
     <br/>
     <form action="http://{{request.get_host}}/sistema/form_cadastro_aluno">
     <input type="submit" value="Cadastrar Aluno">
@@ -78,9 +79,9 @@ document.getElementById("demo").innerHTML = d.toDateString();
 <table  cellpadding="0" cellspacing="0">
 <thread>
     <tr>
-        <th class="td3">Nome</th>
-        <th class="td3">Sobrenome</th>
-        <th>telefone</th>
+        <th class="th1">Nome</th>
+        <th class="th1">Sobrenome</th>
+        <th class="th1">Telefone</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -94,11 +95,10 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ instrutor.nome }}</td>
         <td>{{ instrutor.sobrenome }}</td>
-        <td  class="td2">{{ instrutor.telefone }}</td>
+        <td  class="td4">{{ instrutor.telefone }}</td>
         <td  class="td1"><a href="visualizar_instrutor/{{instrutor.id}}">View</td>
         <td   class="td1"> <a href="atualizar_dados_instrutor/{{instrutor.id}}">Update</td>
         <td   class="td1"><a href="deletar_instrutor/{{instrutor.id}}">Del</td>
-
     </tr>
 </thread>
     {% endfor %}
@@ -121,7 +121,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <th class="td3">Início</th>
         <th class="td3">Fim</th>
-        <th>Data</th>
+        <th class="td3">Data</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -135,7 +135,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ treinos.hora_inicio_treino }}</td>
         <td>{{ treinos.hora_fim_treino }}</td>
-        <td class="td1">{{ treinos.data_treino }}</td>
+        <td class="td4">{{ treinos.data_treino }}</td>
         <td   class="td1"><a href="visualizar_treino/{{treinos.id}}">View</td>
         <td   class="td1"> <a href="atualizar_dados_treino/{{treinos.id}}">Update</td>
         <td   class="td1"><a href="deletar_treino/{{treinos.id}}">Del</td>
@@ -163,7 +163,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <th class="td3">Início</th>
         <th class="td3">Fim</th>
-        <th>Atividade</th>
+        <th class="td3">Atividade</th>
         <th>Visualizar</th>
         <th>Atualizar</th>
         <th>Deletar</th>
@@ -177,7 +177,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
     <tr>
         <td>{{ turmas.hora_inicio_turma }}</td>
         <td>{{ turmas.hora_fim_turma }}</td>
-        <td class="td1">{{ turmas.atividade }}</td>
+        <td class="td4">{{ turmas.atividade }}</td>
         <td   class="td1"><a href="visualizar_turma/{{turmas.id}}">View</td>
         <td   class="td1"> <a href="atualizar_dados_turma/{{turmas.id}}">Update</td>
         <td   class="td1"><a href="deletar_turma/{{turmas.id}}">Del</td>

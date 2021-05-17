@@ -36,7 +36,7 @@ document.getElementById("demo").innerHTML = d.toDateString();
 
 
 {% for treinos in treinos %}
-<div class="container">
+<div class="container2">
 
 <form action="http://{{request.get_host}}/sistema/atualizar_treino" method="POST">
   {% csrf_token %}
